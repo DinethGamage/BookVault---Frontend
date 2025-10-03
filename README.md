@@ -1,6 +1,6 @@
-# Library Management System - Frontend
+# BookVault Frontend 📚
 
-A modern React.js frontend application for managing library operations including book borrowing, user authentication, and admin management.
+A modern React.js frontend application for the BookVault Library Management System.
 
 ## 🚀 Features
 
@@ -26,8 +26,8 @@ A modern React.js frontend application for managing library operations including
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/YOUR_USERNAME/LibraryManagement-Frontend.git
-   cd LibraryManagement-Frontend
+   git clone https://github.com/DinethGamage/BookVault---Frontend.git
+   cd BookVault---Frontend
    ```
 
 2. **Install dependencies**
@@ -36,7 +36,12 @@ A modern React.js frontend application for managing library operations including
    ```
 
 3. **Configure environment**
-   Create a `.env` file in the root directory:
+   Copy the example environment file and update it:
+   ```bash
+   cp .env.example .env
+   ```
+   
+   Edit `.env` and set your backend API URL:
    ```env
    VITE_API_BASE_URL=http://localhost:8080
    ```
@@ -97,12 +102,16 @@ The application supports light and dark themes:
 - Uses Tailwind CSS dark mode classes
 - Toggle available in the header
 
-## 🔗 API Integration
+## 🔗 Backend Integration
 
-The frontend integrates with a Spring Boot backend:
-- Base URL configurable via environment variables
-- Automatic token attachment to requests
-- Error handling with user feedback
+This frontend is designed to work with a Spring Boot backend API. The backend should provide:
+
+- **Authentication endpoints**: `/api/auth/*`
+- **Book management**: `/api/books/*`
+- **User management**: `/api/users/*`
+- **Issue records**: `/api/issue_records/*`
+
+Configure the backend URL in your `.env` file using the `VITE_API_BASE_URL` variable.
 
 ## 📱 Responsive Design
 
@@ -110,6 +119,21 @@ The frontend integrates with a Spring Boot backend:
 - Responsive grid layouts
 - Touch-friendly interactions
 - Optimized for various screen sizes
+
+## 🚀 Deployment
+
+### Netlify (Recommended)
+1. Build the project: `npm run build`
+2. Deploy the `dist` folder to Netlify
+3. Set environment variable: `VITE_API_BASE_URL=https://your-backend-url.com`
+
+### Vercel
+1. Connect your GitHub repository
+2. Set build command: `npm run build`
+3. Set output directory: `dist`
+4. Add environment variables in dashboard
+
+See [DEPLOYMENT.md](DEPLOYMENT.md) for detailed deployment instructions.
 
 ## 🤝 Contributing
 
@@ -123,10 +147,10 @@ The frontend integrates with a Spring Boot backend:
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## 🔗 Related Repositories
-
-- [Backend Repository](https://github.com/YOUR_USERNAME/LibraryManagement-Backend) - Spring Boot API
-
 ## 📞 Support
 
 If you have any questions or issues, please open an issue in this repository.
+
+---
+
+**Built with ❤️ using React and modern web technologies**
